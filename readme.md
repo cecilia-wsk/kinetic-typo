@@ -1,4 +1,4 @@
-# Three.js Journey
+# Kinetic Typography
 
 ## Setup
 Download [Node.js](https://nodejs.org/en/download/).
