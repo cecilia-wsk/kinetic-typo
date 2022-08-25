@@ -3,8 +3,8 @@ import * as THREE from 'three'
 import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js'
 import * as dat from 'dat.gui'
 import { NearestFilter } from 'three'
-import shaders from './shaders.js';
-
+import vertexShader from './shaders/vertex.glsl';
+import fragmentShader from './shaders/fragment.glsl';
 
 /**
  * Base
@@ -38,10 +38,11 @@ const material = new THREE.ShaderMaterial({
         uTime: { value: 0 },
         uTexture: { value: textureText }
     },
-    vertexShader: shaders.vertex,
-    fragmentShader: shaders.fragment,
-    transparent: false,
-    side: THREE.DoubleSide
+    vertexShader: vertexShader,
+    fragmentShader: fragmentShader,
+    side: THREE.DoubleSide,
+    wireframe: false,
+    transparent: true
 })
 
 const mesh = new THREE.Mesh(geometry, material);
